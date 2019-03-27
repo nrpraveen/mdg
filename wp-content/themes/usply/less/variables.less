@@ -1,0 +1,103 @@
+// Color Palette
+
+// General
+@black:#000000;
+@white:#ffffff;
+
+// Dark Blues
+@color-1:#304ffc;
+@color-2:#5973fc;
+@color-3:#8296fc;
+@color-4:#adb8ff;
+@color-5:#d6dbff;
+
+// Dark Grays
+@color-6:#2b3d4f;
+@color-7:#747f8a;
+@color-8:#808c96;
+@color-9:#abb2ba;
+@color-10:#d4d9db;
+
+// Greens
+@color-11:#91d62d;
+@color-12:#a8de57;
+@color-13:#bde582;
+@color-14:#d4edab;
+@color-15:#e8f7d6;
+
+// Yellows
+@color-16:#ffd100;
+@color-17:#ffdb33;
+@color-18:#ffe366;
+@color-19:#ffed99;
+@color-20:#fff5cc;
+
+// Teals
+@color-21:#00c2bd;
+@color-22:#33cfc9;
+@color-23:#66dbd6;
+@color-24:#99e5e3;
+@color-25:#ccf2f2;
+
+// Light Grays
+@color-26:#bdc2c7;
+@color-27:#c9cfd1;
+@color-28:#d6dbde;
+@color-29:#e5e8e8;
+@color-30:#f2f2f5;
+
+// (Paragraph Style) Default font size/line-height
+@default-color:@black;
+@anchor-color:@color-11;
+@font-size:18;
+@rem:unit(@font-size, rem);
+@line-height:unit(3*@gutter-y)/unit(@font-size, em);
+@letter-spacing:0;
+
+// Wrappers and gutters
+@gutter-lg:30px;
+@gutter-sm:20px;
+@gutter-y:12px;
+@wrapper:1440px;
+@desktop-header-height:6*@gutter-y;
+@mobile-bth-size: 4*@gutter-y;
+
+@subgrid:4*@gutter-y;
+@grid-width-1:1*(@wrapper/5);
+@grid-width-2:2*(@wrapper/5);
+@grid-width-3:3*(@wrapper/5);
+@grid-width-4:4*(@wrapper/5);
+@grid-width-5:5*(@wrapper/5);
+
+@wrapperMin:~"screen and (min-width:1441px)";
+@wrapperMax:~"screen and (max-width:1440px)";
+
+@mobileMin:~"screen and (min-width:783px)";
+@mobileMax:~"screen and (max-width:782px)";
+
+@mobileSmallMin:~"screen and (min-width:381px)";
+@mobileSmallMax:~"screen and (max-width:380px)";
+
+@tabletMin:~"screen and (min-width:1141px)";
+@tabletMax:~"screen and (max-width:1140px)";
+
+@mobileSmallMax:~"screen and (max-width:480px)";
+@mobileSmallMin:~"screen and (min-width:481px)";
+
+@tablet:~"screen and (min-width:783px) and (max-width:1140px)";
+
+@mobileRes:~"screen and (min-width:481px) and (max-width:783px)";
+@tabletSmallRes: ~"screen and (min-width:783px) and (max-width:960px)";
+@tabletLargeRes: ~"screen and (min-width:961px) and (max-width:1140px)";
+@wrapperRes: ~"screen and (min-width:1141px) and (max-width:1441px)";
+
+// Fonts and Font Weights
+.Condensed() { font-family: 'FlamaCondensed', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif; }
+.SansSerif() { font-family: 'Flama', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; }
+.FallbackCondensed() { font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif; }
+.FallbackSansSerif() { font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; }
+
+.Regular() { font-weight:400; }
+.Medium() { font-weight:500; }
+.Semibold() { font-weight:600; }
+.Bold() { font-weight:700; }

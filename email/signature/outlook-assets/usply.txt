@@ -1,0 +1,16 @@
+[%name%]
+[%title%]
+
+[%has_phone%]P: [%phone_ext%]
+[%/has_mobile%][%has_fax%]F: [%fax%]
+[%/has_phone%][%has_mobile%]C: [%mobile%]
+[%/has_fax%]
+
+USply Partner with US
+
+Usply.net
+
+Facebook: https://www.facebook.com/USPly
+Twitter: https://twitter.com/usply
+Instagram: https://www.instagram.com/usply/
+Linkedin: https://www.linkedin.com/company/usply-llc/about/
