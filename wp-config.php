@@ -20,58 +20,22 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+define( 'DB_NAME', 'mdg' );
 
-define('HOSTNAME_LOCAL', 'dev.usply.net');
-define('HOSTNAME_DEV', 'dev.usply.net.php72-37.lan3-1.websitetestlink.com/');
-define('HOSTNAME_LIVE', 'www.usply.com');
+/** MySQL database username */
+define( 'DB_USER', 'root' );
 
-function is_local() {
-	return $_SERVER['HTTP_HOST'] == HOSTNAME_LOCAL;
-}
+/** MySQL database password */
+define( 'DB_PASSWORD', 'password' );
 
-function is_dev() {
-	return $_SERVER['HTTP_HOST'] == HOSTNAME_DEV;
-}
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
 
-function is_live() {
-	return $_SERVER['HTTP_HOST'] == HOSTNAME_LIVE;
-}
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
 
-define('WP_MEMORY_LIMIT', '64M');
-
-$hostname = null;
-$database = null;
-$username = null;
-$password = null;
-$protocol = 'http';
-
-if(in_array($_SERVER['HTTP_HOST'], [HOSTNAME_LOCAL, HOSTNAME_DEV])) {
-	$hostname = $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? '207.246.248.12' : 'mariadb-002.wc1.lan3.stabletransit.com';
-	$database = '2021327_usplydev';
-	$username = '2021327_usplydev';
-	$password = '7kQmoV129zZ8';
-}
-elseif(in_array($_SERVER['HTTP_HOST'], [HOSTNAME_LIVE])) {
-	$hostname = 'localhost';
-	$database = '';
-	$username = '';
-	$password = '';
-	$protocol = 'https';
-	define('FORCE_SSL_ADMIN', true);
-}
-
-define('DB_NAME', $database);
-define('DB_USER', $username);
-define('DB_PASSWORD', $password);
-define('DB_HOST', $hostname);
-define('DB_CHARSET', 'utf8mb4');
-define('DB_COLLATE', '');
-define('WP_SITEURL', $protocol.'://'.$_SERVER['HTTP_HOST']);
-define('WP_HOME', $protocol.'://'.$_SERVER['HTTP_HOST']);
-define('DISALLOW_FILE_EDIT', true);
-define('WP_AUTO_UPDATE_CORE', false);
-
-session_start();
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -82,14 +46,14 @@ session_start();
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '8zItPbz7e87bKyO7(&5,JSDGV`1Yn4-;q+h~S#`I/lp~LAm-ff!%cU+Zv>4Nq?B.');
-define('SECURE_AUTH_KEY',  '>E*fyx|iyxJ^NRA4.Mh=+T%YkFja%e|}-eo-2*S-<7GWm$sZ[jGgyF7KDO?!u^T!');
-define('LOGGED_IN_KEY',    'Tc~niAVu&_f:J,yJX$NIej=y+(pdB<8pKwe72qV-J;2^6%/n<+y&p0z8D@]G @`(');
-define('NONCE_KEY',        'YnV<vYY5lq}?P7EdvwvV-DMAm2&Fp>DyQ5pkFO-|-C:V,Q8 <eB<EOr3_XvyCJjs');
-define('AUTH_SALT',        'rvz4k3kToymDB|-CloZ>v,3x;,ZI(&VIu`W2C$^e:X;Z|tn^|+|+|YL]aB)-;@Aw');
-define('SECURE_AUTH_SALT', '|&b-dnVIQms}}(Kc!-q+I+`BHrvlwOFZ|0Web[Q`6+r`_i1k{6=1U5oJF.$Y@1YZ');
-define('LOGGED_IN_SALT',   'C|S^,sS:/.Y{Mq=A_If|jm{3[ @)[sSv,WZVYn:/&7!|0G@,Z.P3z%8HYM*6=.>*');
-define('NONCE_SALT',       'yrOPh-od1GPC4^,.s/|+NAl-6F-dQwE5i4)GL[Nkjnys%Tn}LatOk%aL*k/=A8L*');
+define( 'AUTH_KEY',         'wqhkEsK-,ne0,mD5]L3@x~4c`V!8CG@f1[W1K&4cxO,|z%u2TNiC>&>&m=-$Px+Z' );
+define( 'SECURE_AUTH_KEY',  'j~|{#e$v&H-=-BIgV%Lzu6RRZUZf]iYl:s6UtQzSnql)_@fqxcL`eBELl 6kR;F+' );
+define( 'LOGGED_IN_KEY',    'Rz6|_>!1,pyMQwr/vFx|fu+Th:AB+/4.Y=`Ag&*pk5y(v+V-?83s5$K=.+<<-#07' );
+define( 'NONCE_KEY',        '%,EF|LB|3Ouy8]4XE_>;``u1prdL3+XJ:2kRQ[/`rW3=Mtgf{6Mf}yI$X[H+G7&%' );
+define( 'AUTH_SALT',        'u.0s^At@:JGaqm3YV -Y}2NLy?XLDd-yQa1aad[S+dC8j%#|/@yLFsDq 2a;FMN9' );
+define( 'SECURE_AUTH_SALT', 'DF+r{P>luXGe-0(TUzEGjkSPKHw&[8AisAL-&*S,S2V_KR;I.P@H;@j3G7+9/SVG' );
+define( 'LOGGED_IN_SALT',   '6k:p_|[+|I=}Xeyl)kY=o-X$J+BHDEuF7e3OB=jToz}M#8[6W0kPw]Wp9S#%(F.H' );
+define( 'NONCE_SALT',       '?d$VG7BFZO0Q|(`)Qy+E!pR6#KR)TPs-FRn{p2V,B@B&Z0r)n)EC}y.6%TFsII{}' );
 
 /**#@-*/
 
@@ -99,7 +63,7 @@ define('NONCE_SALT',       'yrOPh-od1GPC4^,.s/|+NAl-6F-dQwE5i4)GL[Nkjnys%Tn}LatO
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'ply_';
+$table_prefix = 'wp_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -113,13 +77,14 @@ $table_prefix  = 'ply_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', isset($_GET['debug']));
+define( 'WP_DEBUG', false );
 
-/* That's all, stop editing! Happy blogging. */
+/* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once( ABSPATH . 'wp-settings.php' );
